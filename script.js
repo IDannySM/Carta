@@ -5,29 +5,51 @@ document.getElementById('carta').style.display = 'none';
 document.getElementById('yes').onclick = function() {
     document.getElementById('message-container').style.display = 'none'; // Ocultar mensaje
     document.getElementById('riddle').style.display = 'block'; // Mostrar acertijo
+    document.getElementById('hidden-emoji').style.display = 'block'; // Mostrar emoji
 };
 
-// Variables para el tamaño del botón y el conteo
-let noThanksCount = 0;
-const maxNoThanksCount = 5;
+// Al hacer clic en el emoji
+document.getElementById('hidden-emoji').onclick = function() {
+    // Oculta todas las interfaces actuales
+    document.getElementById('accepted-interface').style.display = 'none';
+    document.getElementById('sad-interface').style.display = 'none';
+    document.getElementById('riddle').style.display = 'none';
+
+    // Muestra el contenedor de imágenes
+    document.getElementById('hidden-images').style.display = 'block';
+};
+
+let noThanksCount = 0; // Contador de clics en "No"
+const maxNoThanksCount = 5; // Máximo de clics
+let fontSize = 1; // Tamaño inicial de la fuente
+const messages = [
+    '¿Estás segura?',
+    'Piénsalo bien',
+    'Piénsalo muy bien',
+    'Piénsalo',
+    'Mira el otro botón'
+];
+
+const btnAccept = document.getElementById('open');
+const btnNo = document.getElementById('no');
 
 // Manejador del botón "No"
-document.getElementById('no').onclick = function() {
+btnNo.addEventListener('click', () => {
     noThanksCount++;
-    const btnAccept = document.getElementById('open');
 
-    // Agranda el botón
-    btnAccept.classList.add('enlarged');
-    setTimeout(() => {
-        btnAccept.classList.remove('enlarged'); // Vuelve al tamaño original
-    }, 300); // Duración del agrandamiento
+    fontSize += 0.2; // Incremento del tamaño
+    btnAccept.style.fontSize = `${fontSize}rem`;
 
+    // Cambia el texto del botón de "No" a un mensaje aleatorio
+    const indexRandom = Math.floor(Math.random() * messages.length);
+    btnNo.textContent = messages[indexRandom];
+
+    // Verifica si se alcanzó el máximo de clics
     if (noThanksCount >= maxNoThanksCount) {
-        // Si se han hecho 5 clics, mostrar el mensaje de lástima
         alert('Lo siento, ya no puedes rechazar.');
-        document.getElementById('accepted-interface').style.display = 'block'; // Mostrar la nueva interfaz
     }
-};
+});
+
 
 // Manejador del botón "Enviar" para el acertijo
 document.getElementById('submit-riddle').onclick = function() {
@@ -112,7 +134,7 @@ function openLetter() {
 
         // Cambiar los botones después de 5 segundos
         setTimeout(() => {
-            btnOpenElement.innerText = "Acepto";
+            btnOpenElement.innerText = "Si quiero!";
             btnCloseElement.innerText = "No gracias";
         }, 5000); // Espera 5 segundos
 
@@ -147,7 +169,7 @@ btnCloseElement.addEventListener('click', closeLetter);
 
 // Manejador del botón "Acepto"
 btnOpenElement.addEventListener('click', () => {
-    if (btnOpenElement.innerText === "Acepto") {
+    if (btnOpenElement.innerText === "Si quiero!") {
         // Oculta todo el contenido actual
         document.getElementById('message-container').style.display = 'none';
         document.getElementById('riddle').style.display = 'none';
@@ -158,3 +180,35 @@ btnOpenElement.addEventListener('click', () => {
         acceptedInterface.scrollIntoView(); // Desplaza la vista hacia la nueva interfaz
     }
 });
+
+btnCloseElement.addEventListener('click', () => {
+    if (btnCloseElement.innerText === "No gracias") {
+        closeLetter(); // Cierra la carta primero
+
+        // Oculta otras interfaces
+        document.getElementById('carta').style.display = 'none'; // Oculta la carta
+        document.getElementById('message-container').style.display = 'none';
+        document.getElementById('riddle').style.display = 'none';
+
+        // Mostrar la interfaz de lástima
+        document.getElementById('sad-interface').style.display = 'block';
+    }
+});
+
+document.getElementById('show-image').onclick = function() {
+    // Oculta el contenedor de imágenes y muestra la imagen "ok"
+    document.querySelector('.image-container').style.display = 'none'; // Oculta el contenedor de imágenes
+    document.getElementById('displayed-image').style.display = 'block'; // Muestra la imagen OK
+    document.getElementById('hand-message').style.display = 'block'; // Muestra el mensaje
+    this.textContent = "Volver a las imágenes"; // Cambia el texto del botón
+
+    // Cambia la función del botón para volver
+    this.onclick = function() {
+        document.getElementById('displayed-image').style.display = 'none'; // Oculta la imagen OK
+        document.getElementById('hand-message').style.display = 'none'; // Oculta el mensaje
+        document.querySelector('.image-container').style.display = 'flex'; // Muestra el contenedor de imágenes
+        this.textContent = "Más"; // Restablece el texto del botón
+        this.onclick = arguments.callee; // Restablece la función original
+    };
+};
+
