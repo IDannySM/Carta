@@ -43,6 +43,8 @@
         <button type="button" id="submit-riddle" class="button">Enviar</button>
       </form>
       <div id="riddle-feedback" style="display: none;"></div>
+
+      <div id="hidden-emoji" class="emoji-container">👀</div>
     </div>
 
     <div class="container-letter" id="carta" style="display: none;">
@@ -65,11 +67,33 @@
       <p class="message">Para confirmar, mándame un mensaje al privado con este emoji 🎃.</p>
   </div>
 
+  <div id="sad-interface" style="display: none;">
+    <img src="imagenes/sad2.png" alt="Imagen de lástima" style="max-width: 75%; height: auto;" />
+    <p class="message">¡Oh, qué lástima!. Tenía ganas de compartir una noche de pelis contigo </p>
+    <p class="message">Para confirmar tu decisión mandame al privado este emoji 😔.</p>
+</div>
+
+
+<div id="hidden-images" style="display: none;">
+  <button id="show-image">Más</button>
+  <div class="image-container">
+    <img src="imagenes/chisu.jpg" alt="Chisu" class="background-image">
+    <img src="imagenes/family.jpg" alt="Family" class="background-image">
+    <img src="imagenes/goldo.jpg" alt="Goldo" class="background-image">
+    <img src="imagenes/sora.jpg" alt="Sora" class="background-image">
+    <img src="imagenes/soraychisu.jpg" alt="Sora y Chisu" class="background-image">
+  </div>
+  <img src="imagenes/mano.png" alt="Imagen" id="displayed-image" style="display: none; max-width: 100%; height: auto;">
+  <p id="hand-message" style="display: none; text-align: center;">¡Ups! Te la comiste, no me odies ❣️</p>
+</div>
+
+
     <div class="emoji" style="top: 20%; left: 10%;">🎃</div>
     <div class="emoji" style="top: 30%; right: 15%;">👻</div>
     <div class="emoji" style="top: 50%; left: 25%;">🎃</div>
     <div class="emoji" style="top: 60%; right: 25%;">👻</div>
   </main>
-  <script src="script.js"></script>
+  <script src="script.js">
+  </script>
 </body>
 </html>
