@@ -1,0 +1,373 @@
+/* Reset CSS */
+* {
+    min-width: 0;
+    font: inherit;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  img,
+  video,
+  svg {
+    display: block;
+    height: auto;
+    max-width: 100%;
+  }
+  
+  /* Body styles */
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #fac7d3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Centrar texto */
+  }
+  
+  /* Headings */
+h1 {
+    font-size: 2.5rem; /* Aumentar tamaño de las letras */
+    margin-bottom: 20px;
+    animation: pulse 1s infinite; /* Efecto de palpitación */
+    color: #ff4500; /* Cambia el color del texto */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra oscura para un efecto dramático */
+}
+  
+  /* Animation for h1 */
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  
+  /* Main styles */
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Container styles */
+  .container-letter {
+    position: relative;
+    color: #ffffff; /* Cambia el color del texto de la carta */
+  }
+  
+  /* Cover styles */
+  .cover {
+    position: absolute;
+    border-left: 200px solid transparent;
+    border-right: 200px solid transparent;
+    border-top: 100px solid #5f1e05;
+    border-bottom: 100px solid transparent;
+    transition: transform .75s;
+    transform-origin: top;
+  }
+  
+  /* Paper styles */
+  .paper {
+    position: absolute;
+    padding: 1.5rem;
+    line-height: 2rem;
+    right: 5px;
+    z-index: -1;
+    background: rgb(78, 23, 23);
+    width: 390px;
+    height: 180px;
+    transition: all .75s;
+    font-family: 'Poppins', sans-serif; /* Aplica la fuente también aquí */
+  }
+  
+  /* Letter styles */
+  .letter {
+    border-left: 200px solid #21033d;
+    border-right: 200px solid #21033d;
+    border-top: 100px solid transparent;
+    border-bottom: 100px solid #21033d;
+  }
+  
+  /* Options styles */
+  .options {
+    display: flex;
+    gap: 5rem;
+    justify-content: center; /* Centrar botones */
+    margin-top: 20px;
+  }
+  
+  button {
+    background-color: #f0935d; /* Color de fondo */
+    border: none; /* Sin borde */
+    border-radius: 8px; /* Bordes redondeados */
+    color: #ffffff; /* Color del texto */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    font-size: 16px; /* Tamaño de la fuente */
+    padding: 10px 20px; /* Espaciado interno */
+    margin: 5px; /* Espaciado entre botones */
+    transition: background-color 0.3s ease; /* Efecto de transición */
+    font-family: 'Poppins', sans-serif; /* Aplica la fuente a los botones */
+  }
+  
+  button:hover {
+    background-color: #030303; /* Color más oscuro al pasar el ratón */
+  }
+  
+  /* Message container */
+  .message-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra para un efecto más bonito */
+  }
+  
+  /* Full image styles */
+  .full-image {
+    max-width: 50%; /* Ajusta el tamaño de la imagen (50% del ancho del contenedor) */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-bottom: 1rem; /* Espacio debajo de la imagen */
+  }
+  
+  /* Riddle container styles */
+  .riddle-container {
+    background: #13012c; /* Color de fondo del contenedor del acertijo */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra */
+    margin: 20px 0; /* Espaciado externo */
+    font-family: 'Poppins', sans-serif; /* Aplica la fuente a los botones */
+    color: #ffffff; /* Color del texto en el contenedor */
+    max-width: 400px; /* Limitar el ancho del recuadro */
+    width: 100%; /* Asegura que ocupe el espacio disponible */
+  }
+
+  main {
+    display: flex;
+    flex-direction: column; /* Mantiene la dirección vertical */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    padding: 20px; /* Añadir un poco de espacio alrededor */
+}
+
+.options1 {
+    display: flex;
+    flex-direction: column; /* Cambiar a columna */
+    gap: 1rem; /* Espaciado entre las opciones */
+    justify-content: center; /* Centra las opciones */
+    align-items: center; /* Centra horizontalmente */
+    margin-top: 20px;
+    max-width: 100%; /* Asegura que no sobresalgan */
+    overflow: hidden; /* Oculta cualquier desbordamiento */
+}
+
+/* Estilo para los selects */
+select {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ff6f20; /* Color de borde */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #fff3cd; /* Color de fondo */
+    font-family: 'Poppins', sans-serif; /* Fuente moderna */
+}
+
+/* Message container */
+.message-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+}
+
+  
+  .riddle-container::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    background: url('imagenes/halloween_icon.png') no-repeat center center;
+    background-size: cover; /* Asegúrate de tener un icono relacionado */
+  }
+  
+  .riddle-container h2 {
+    color: #ffffff; /* Un rojo oscuro */
+    font-family: 'Creepster', cursive; /* Fuente temática, necesitas agregarla en tu HTML */
+  }
+  
+  .riddle-container p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #5a5a5a; /* Color gris oscuro */
+  }
+  
+  .riddle-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .riddle-container li {
+    margin: 10px 0;
+  }
+  
+  .riddle-container select {
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #ff6f20; /* Color naranja oscuro */
+    border-radius: 5px;
+    background-color: #fff3cd; /* Fondo claro para el selector */
+  }
+  
+  /* Submit button styles */
+  #submit-riddle {
+    background-color: #d9534f; /* Rojo oscuro */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif; /* Aplica la fuente a los botones */
+  }
+  
+  #submit-riddle:hover {
+    background-color: #c9302c; /* Rojo más oscuro al pasar el mouse */
+  }
+  
+  /* Feedback styles */
+  #riddle-feedback {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  /* Heart animation */
+  .heart {
+    display: none;
+    position: absolute;
+    top: 25%;
+    left: 46.5%;
+    margin: auto;
+    font-size: 3rem;
+    color: #fe3334;
+    animation: crecer 1s forwards;
+  }
+  
+  @keyframes crecer {
+    0% {
+      scale: 1;
+      opacity: 1;
+    }
+    100% {
+      scale: 3;
+      opacity: 0;
+    }
+  }
+  
+  /* Open/close animations */
+  .open-cover {
+    transform: rotatex(180deg);
+  }
+  
+  .open-paper {
+    animation: openPaper .5s forwards;
+  }
+  
+  @keyframes openPaper {
+    0% {
+      top: 0;
+    }
+    100% {
+      top: -120px;
+    }
+  }
+  
+  .close-paper {
+    animation: closePaper .5s forwards;
+  }
+  
+  @keyframes closePaper {
+    0% {
+      top: -120px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #050505; /* Color de fondo base */
+    background-image: url('imagenes/spider.png'); /* Ruta relativa de la imagen de fondo */
+    background-size: cover; /* Hace que la imagen cubra todo el fondo */
+    background-position: center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    padding: -8px; /* Aumenta el espacio alrededor del contenido */
+    position: relative; /* Permite posicionar los emojis relativos al body */
+}
+
+/* Estilos para los emojis */
+.emoji {
+    position: absolute;
+    font-size: 3rem; /* Tamaño de los emojis */
+    animation: fall-zigzag 8s linear infinite; /* Animación de caída en zigzag */
+}
+
+/* Animación de caída en zigzag */
+@keyframes fall-zigzag {
+    0% {
+        transform: translateX(0); /* Comienza en la parte superior */
+        top: -5%; /* Comienza ligeramente fuera de la vista */
+    }
+    25% {
+        transform: translateX(20px); /* Se desplaza a la derecha */
+    }
+    50% {
+        transform: translateX(-20px); /* Se desplaza a la izquierda */
+    }
+    75% {
+        transform: translateX(20px); /* Se desplaza a la derecha nuevamente */
+    }
+    100% {
+        top: 100%; /* Termina en la parte inferior */
+    }
+}
+
+#accepted-interface {
+  display: none; /* Oculto inicialmente */
+  position: fixed; /* Fijo para no interferir con otros elementos */
+  top: 50%; /* Centrado vertical */
+  left: 50%; /* Centrado horizontal */
+  transform: translate(-50%, -50%); /* Ajustar el centro */
+  z-index: 10; /* Asegúrate de que esté por encima de otros elementos */
+  text-align: center; /* Centrar contenido dentro del contenedor */
+}
+
+/* Imagen centrada y tamaño ajustado */
+#accepted-interface img {
+  max-width: 75%; /* Aumenta el tamaño de la imagen al 70% del ancho del contenedor */
+  height: auto; /* Mantiene proporciones */
+  display: block; /* Asegura que la imagen sea un bloque */
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+#accepted-interface .message {
+  font-size: 2.0rem; /* Aumentar el tamaño de la letra */
+  color: #ff7f50; /* Cambiar el color a un tono coral */
+  margin: 0; /* Sin margen */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra para un efecto más bonito */
+}
+  
