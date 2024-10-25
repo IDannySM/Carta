@@ -370,4 +370,125 @@ select {
   margin: 0; /* Sin margen */
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra para un efecto más bonito */
 }
-  
+
+#sad-interface {
+  display: none; /* Oculto inicialmente */
+  position: fixed; /* Fijo para no interferir con otros elementos */
+  top: 50%; /* Centrado vertical */
+  left: 50%; /* Centrado horizontal */
+  transform: translate(-50%, -50%); /* Ajustar el centro */
+  z-index: 10; /* Asegúrate de que esté por encima de otros elementos */
+  text-align: center; /* Centrar contenido dentro del contenedor */
+}
+
+/* Imagen centrada y tamaño ajustado */
+#sad-interface img {
+  max-width: 75%; /* Ajusta el tamaño de la imagen al 75% del ancho del contenedor */
+  height: auto; /* Mantiene proporciones */
+  display: block; /* Asegura que la imagen sea un bloque */
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+/* Estilo del mensaje */
+#sad-interface .message {
+  font-size: 2.0rem; /* Tamaño de la letra */
+  color: #ff7f50; /* Cambiar el color a un tono coral */
+  margin: 0; /* Sin margen */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra para un efecto más bonito */
+}
+
+#open {
+  font-size: 1rem; /* Tamaño inicial */
+  transition: font-size 0.2s ease; /* Transición suave */
+}
+
+.enlarged {
+  font-size: 1.5em; /* Aumenta el tamaño del texto (ajusta según necesites) */
+}
+
+#btnCloseElement {
+  position: relative; /* Asegúrate de que el botón esté posicionado correctamente */
+}
+
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Mantener el contenedor a la altura completa de la ventana */
+  background-color: #050505; /* Fondo oscuro para las imágenes */
+  padding: 20px; /* Espaciado alrededor */
+}
+
+.background-image {
+  width: 30%; /* Ajusta el tamaño de las imágenes */
+  margin: 10px; /* Espaciado entre imágenes */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Nueva clase para el emoji en una esquina */
+.emoji-container {
+  position: fixed; /* Permite que el emoji esté en la esquina */
+  bottom: 20px; /* Distancia desde la parte inferior */
+  right: 20px; /* Distancia desde la derecha */
+  font-size: 1.0rem; /* Tamaño del emoji más pequeño */
+  pointer-events: auto; /* Asegura que se pueda interactuar con él */
+  display: none; /* Inicialmente oculto */
+}
+
+#hidden-images {
+  display: none; /* Oculto inicialmente */
+  position: fixed; /* Fijo para ocupar toda la pantalla */
+  top: 0; /* Comienza desde la parte superior */
+  left: 0; /* Comienza desde la izquierda */
+  width: 100%; /* Ocupar todo el ancho */
+  height: 100%; /* Ocupar toda la altura */
+  background-color: #050505; /* Fondo negro */
+  padding: 20px; /* Espacio alrededor */
+  z-index: 1; /* Asegúrate de que esté por encima de otros elementos */
+  overflow-y: auto; /* Permite el desplazamiento vertical si es necesario */
+}
+
+#show-image {
+  cursor: pointer; /* Cambia el cursor al pasar el ratón */
+  background-color: #f0935d; /* Fondo blanco para el botón */
+  color: #ffffff; /* Color del texto */
+  border: none; /* Sin borde */
+  padding: 10px 20px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  position: fixed; /* Fijo en la pantalla */
+  bottom: 20px; /* Distancia desde la parte inferior */
+  right: 100px; /* Distancia desde la derecha (ajustado) */
+  transition: background-color 0.3s; /* Transición suave para el color de fondo */
+  z-index: 2; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+#show-image:hover {
+  background-color: #000000; /* Color de fondo al pasar el ratón */
+}
+
+#displayed-image {
+  max-width: 80%; /* Limitar el tamaño máximo de la imagen */
+  height: auto; /* Mantener proporciones */
+  border-radius: 5px; /* Bordes redondeados para la imagen */
+  display: none; /* Inicialmente oculto */
+  margin-top: 20px; /* Espaciado superior de la imagen */
+  text-align: center; /* Centrar la imagen */
+}
+
+#displayed-image {
+  max-width: 40%; /* Cambia el tamaño de la imagen */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Centra la imagen */
+}
+
+#hand-message {
+  display: none;
+  text-align: center;
+  font-size: 1.5rem; /* Tamaño de fuente más grande */
+  color: #ff6b6b; /* Color del texto */
+  font-family: 'Poppins', sans-serif; /* Fuente bonita */
+  margin-top: 10px; /* Espacio entre la imagen y el texto */
+}
